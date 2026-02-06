@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title data-i18n="title">Product Circularity Explorer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Libraries -->
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+  <style>
+    /* ---------- LOGIN FORM STYLES ---------- */
+    #loginForm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+      font-family: 'Inter', sans-serif;
+    }
+
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+      padding: 8px 12px;
+      margin: 6px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 220px;
+      font-size: 14px;
+    }
+
+    #loginForm button {
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: none;
+      background-color: #1e88e5;
+      color: white;
+      cursor: pointer;
+      font-weight: 500;
+      margin-top: 12px;
+      width: 220px;
+      font-size: 14px;
+    }
+
+    #loginForm label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin-top: 8px;
+      width: 220px;
+    }
+
+    #loginForm input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    #loginForm h2 {
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ---------- LOGIN FORM ---------- -->
+  <div id="loginForm">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <label>
+      <input type="checkbox" id="rememberMe" />
+      Remember Me
+    </label>
+    <button onclick="checkLogin()">Login</button>
+  </div>
+
+  <!-- ---------- DASHBOARD ---------- -->
+  <div id="dashboard" style="display:none;">
+    <header class="app-header">
+      <div class="header-content">
+        <img src="logo.png" alt="Lindner Logo" class="logo" />
+        <div class="header-text">
+          <h1 data-i18n="header_title">CO₂ savings potential considering R-scenarios for Lindner products</h1>
+          <p data-i18n="header_subtitle">Circularity & reuse potential overview</p>
+        </div>
+        <button id="langToggle" style="margin-left:auto; padding:6px 12px; border:none; border-radius:8px; cursor:pointer; font-weight:500;">DE</button>
+      </div>
+    </header>
+
+    <main class="container dashboard">
+      <div class="left-panel">
+        <section class="controls">
+          <div class="control">
+            <label for="bereich" data-i18n="label_bereich">Bereich</label>
+            <select id="bereich">
+              <option value="" selected disabled data-i18n="placeholder_bereich">Select Bereich</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <label for="category" data-i18n="label_category">Category</label>
+            <select id="category" disabled>
+              <option value="" selected disabled data-i18n="placeholder_category">Select Category</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <label for="producttyp" data-i18n="label_product">Product type</label>
+            <select id="producttyp" disabled>
+              <option value="" selected disabled data-i18n="placeholder_product">Select Product</option>
+            </select>
+          </div>
+        </section>
+
+        <section id="chart" class="charts"></section>
+      </div>
+
+      <div class="right-panel" id="scenarioDescriptions">
+        <!-- Scenario descriptions appear here -->
+      </div>
+    </main>
+  </div>
+
+  <!-- ---------- LOGIN SCRIPT ---------- -->
+  <script>
+    const LOGIN_USER = "Lindnergroup";    // Change to your username
+    const LOGIN_PASS = "Lindner2026";     // Change to your password
+
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const rememberCheckbox = document.getElementById("rememberMe");
+
+    // Auto-fill if credentials are saved, but do NOT auto-login
+    window.onload = () => {
+      const savedUser = localStorage.getItem("savedUser");
+      const savedPass = localStorage.getItem("savedPass");
+      if(savedUser && savedPass) {
+        usernameInput.value = savedUser;
+        passwordInput.value = savedPass;
+        rememberCheckbox.checked = true;
+        // user must click Login manually
+      }
+    }
+
+    function checkLogin() {
+      const user = usernameInput.value;
+      const pass = passwordInput.value;
+
+      if(user === LOGIN_USER && pass === LOGIN_PASS) {
+        if(rememberCheckbox.checked) {
+          localStorage.setItem("savedUser", user);
+          localStorage.setItem("savedPass", pass);
+        } else {
+          localStorage.removeItem("savedUser");
+          localStorage.removeItem("savedPass");
+        }
+
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+      } else {
+        alert("Incorrect username or password!");
+      }
+    }
+  </script>
+
+  <!-- ---------- YOUR DASHBOARD SCRIPT ---------- -->
+  <script src="script.js"></script>
+</body>
+</html>
