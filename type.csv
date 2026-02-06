@@ -1,0 +1,52 @@
+﻿bereich,category,producttyp
+ATRIUM,Decke (Ceiling),Streckmetaldecke 
+ATRIUM,Decke (Ceiling),"Beleuchtung 
+Streckmetalldecke
+
+
+"
+ATRIUM,Boden (Flooring),Steinboden
+ATRIUM,Leuchte (Lighting),Inszenierungs-beleuchtung 
+ATRIUM,Möbel (Furniture),Ledersessel
+ATRIUM,Möbel (Furniture),Ledersofa
+ATRIUM,Sonstiges (Miscellaneous),Blendschutz Atrium
+EMPORE,Decke (Ceiling),Streckmetall Empore
+EMPORE,Decke (Ceiling),"Beleuchtung 
+Streckmetalldecke"
+EMPORE,Wand (Wall),Glassystemtrennwand
+EMPORE,Türen (Doors),Brandschutztür weiß
+EMPORE,Türen (Doors),Garderobentür weiß
+EMPORE,Sonstiges (Miscellaneous),Brüstung Glas mit Lederarmauflage
+BÜROETAGE,Decke (Ceiling),"Deckenkoffer, hier perforierte Bleche"
+BÜROETAGE,Decke (Ceiling),Lichtleiste Decken-koffer
+BÜROETAGE,Decke (Ceiling),Akustik-Deckensegel perforiert
+BÜROETAGE,Decke (Ceiling),"Beleuchtung 
+Deckensegel"
+BÜROETAGE,Boden (Flooring),"Hohlboden mit ein-
+reihiger Doppleboden-
+trasse"
+BÜROETAGE,Boden (Flooring),Bodenauslass Kabel
+BÜROETAGE,Wand (Wall),Gipskartonwände
+BÜROETAGE,Wand (Wall),Glastür zu den Büros
+BÜROETAGE,Wand (Wall),Einbauregalwände
+BÜROETAGE,Wand (Wall),System-Vollwand
+BÜROETAGE,Wand (Wall),Glassystemwand
+BÜROETAGE,Türen (Doors),Holztür weiß HPL
+BÜROETAGE,Türen (Doors),Brandschutztür grau Flur
+BÜROETAGE,Türen (Doors),"Brandschutztür 
+Aufzugsfvorraum schwarz"
+BÜROETAGE,Türen (Doors),Bandschutztür schwarz 
+BÜROETAGE,Türen (Doors),"Brandschutztür zwei-
+fluglig schwarz"
+BÜROETAGE,Möbel (Furniture),Schreibtisch
+BÜROETAGE,Möbel (Furniture),"Container 
+Schreibtisch"
+BÜROETAGE,Möbel (Furniture),Kastenmöbel
+BÜROETAGE,Sonstiges (Miscellaneous),"Bedienpanel 
+Einzelbüros"
+KANTINE,Wand (Wall),"Glaswand 
+Kunstwerk"
+KANTINE,Decke (Ceiling),Textile Deckenpanele
+KANTINE,Boden (Flooring),Holzboden
+KANTINE,Möbel (Furniture),Bestuhlung
+KANTINE,Möbel (Furniture),Tisch
